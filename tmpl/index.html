@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <title>go-metainspector example site</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://bootswatch.com/cyborg/bootstrap.min.css">
+  </head>
+
+  <body>
+    <h1>go-metainspector</h1>
+    <form action="/inspect" method="POST">
+      <div>
+        <textarea name="url" rows="1" cols="10">Insert an URL here</textarea>
+      </div>
+      <div>
+        <input type="submit" value="Metainspect!">
+      </div>
+    </form>
+
+    {{if .Title}}<div><b>Title:</b> {{.Title}}<div>{{end}}
+    {{if .Author}}<div><b>Author:</b> {{.Author}}<div>{{end}}
+    {{if .Description}}<div><b>Description:</b> {{.Description}}<div>{{end}}
+  </body>
+
+</html>
