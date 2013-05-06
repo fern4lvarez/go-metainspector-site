@@ -39,10 +39,9 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func inspectHandler(w http.ResponseWriter, r *http.Request) {
-  url := r.FormValue("url")
-  http.Redirect(w, r, "/mi/"+url, http.StatusFound)
+	url := r.FormValue("url")
+	http.Redirect(w, r, "/mi/"+url, http.StatusFound)
 }
-
 
 func miHandler(w http.ResponseWriter, r *http.Request) {
 	uri := getUrl(w, r)

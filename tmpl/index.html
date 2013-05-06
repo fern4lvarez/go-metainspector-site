@@ -11,17 +11,25 @@
   <body>
     <h1>go-metainspector</h1>
     <form action="/inspect" method="POST">
-      <div>
-        <textarea name="url" rows="1" cols="10">Insert an URL here</textarea>
-      </div>
-      <div>
-        <input type="submit" value="Metainspect!">
-      </div>
+      <fieldset>
+        <div>
+          <input type="text" onClick="this.select();" name="url" value="Insert an URL here">
+        </div>
+        <div>
+          <input class="btn btn-primary" type="submit" value="Metainspect!">
+        </div>
+      </fieldset>
     </form>
-
-    {{if .Title}}<div><b>Title:</b> {{.Title}}<div>{{end}}
-    {{if .Author}}<div><b>Author:</b> {{.Author}}<div>{{end}}
-    {{if .Description}}<div><b>Description:</b> {{.Description}}<div>{{end}}
+    {{if .Title}}<div><b>Title:</b> {{.Title}}</div>{{end}}
+    {{if .Author}}<div><b>Author:</b> {{.Author}}</div>{{end}}
+    {{if .Description}}<div><b>Description:</b> {{.Description}}</div>{{end}}
+    {{if .Language}}<div><b>Language:</b> {{.Language}}</div>{{end}}
+    {{if .Feed}}<div><b>Feed URL:</b> {{.Feed}}</div>{{end}}
+    {{if .Charset}}<div><b>Charset:</b> {{.Charset}}</div>{{end}}
+    {{if .Keywords}}<div><b>Keywords:</b> {{range .Keywords}} {{. }}{{end}}</div>{{end}}
+    {{if .Images}}<div><b>Images:</b> {{range .Images}} <img src="{{.}}">{{end}}</div>{{end}}
+    {{if .Links}}<div><b>Links:</b> {{range .Links}} <a href="{{.}}">{{.}}</a>{{end}}</div>{{end}} 
   </body>
-
+  <br><br><br>
+  <footer>By <a href="http://twittter.com/fern4lvarez">Fernando Álvarez</a>. Hosted on <a href="www.cloudcontrol.com">cloudControl</a>.</footer>
 </html>
