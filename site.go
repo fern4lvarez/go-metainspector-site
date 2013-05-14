@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	MI "github.com/fern4lvarez/go-metainspector/metainspector"
 	"html/template"
 	"net/http"
@@ -13,6 +14,13 @@ var templates = template.Must(template.ParseFiles("tmpl/index.html"))
 
 type MetaInspector struct {
 	Title string
+}
+
+func getPort() string {
+	if p := os.Getenv("PORT"); p != "" {
+		return p
+	}
+	return "8080"
 }
 
 func getUrl(w http.ResponseWriter, r *http.Request) string {
@@ -45,18 +53,22 @@ func inspectHandler(w http.ResponseWriter, r *http.Request) {
 
 func miHandler(w http.ResponseWriter, r *http.Request) {
 	uri := getUrl(w, r)
+	fmt.Printf("Inspecting %s...", uri)
 	mi, err := MI.New(uri)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	fmt.Println(" Done: ", "http://"+r.Host+r.RequestURI)
 	renderTemplate(w, "index", mi)
-	//http.Redirect(w, r, "/", http.StatusFound)
 }
 
 func main() {
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/inspect", inspectHandler)
 	http.HandleFunc("/mi/", miHandler)
-	http.ListenAndServe(":"+os.Getenv("PORT"), nil)
+
+	port := getPort()
+	fmt.Println("Listening to port", port)
+	http.ListenAndServe(":"+port, nil)
 }
