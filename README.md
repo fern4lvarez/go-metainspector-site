@@ -18,9 +18,9 @@ $ go-metainspector-site
 
 ## Deploy it on cloudControl
 
-* 1. Create app on cloudControl: `cctrlapp APP_NAME create custom https://github.com/kr/heroku-buildpack-go.git`
+* 1: Create app on cloudControl: `cctrlapp APP_NAME create custom https://github.com/kr/heroku-buildpack-go.git`
 
-* 2. Push and deploy:
+* 2: Push and deploy:
 
 ```
 $ cctrlapp APP_NAME/default push
@@ -28,7 +28,7 @@ $ cctrlapp APP_NAME/default push
 $ cctrlapp APP_NAME/default deploy
 ```
 
-* 3. Check it out on APP_NAME.cloudcontrolapp.com
+* 3: Check it out on APP_NAME.cloudcontrolapp.com
 
 ## TL; DR
 
