@@ -2,19 +2,33 @@
 
 ## See the [go-metainspector](http://github.com/fern4lvarez/go-metainspector-site) package in action!
 
-* Step 1: Get the `go-metainspector-site` package
+* 1: Get the `go-metainspector-site` package
 
 ```
 go get github.com/fern4lvarez/go-metainspector-site
 ```
 
-* Step 2: Run it
+* 2: Run it
 
 ```
 $ go-metainspector-site
 ```
 
-* Step 3: Try it on localhost:8080
+* 3: Try it on localhost:8080
+
+## Deploy it on cloudControl
+
+* 1. Create app on cloudControl: `cctrlapp APP_NAME create custom https://github.com/kr/heroku-buildpack-go.git`
+
+* 2. Push and deploy:
+
+```
+$ cctrlapp APP_NAME/default push
+
+$ cctrlapp APP_NAME/default deploy
+```
+
+* 3. Check it out on APP_NAME.cloudcontrolapp.com
 
 ## TL; DR
 
