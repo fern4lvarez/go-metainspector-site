@@ -5,6 +5,7 @@ import (
 	MI "github.com/fern4lvarez/go-metainspector/metainspector"
 	"html/template"
 	"net/http"
+	"net/url"
 	"os"
 )
 
@@ -47,8 +48,19 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func inspectHandler(w http.ResponseWriter, r *http.Request) {
-	url := r.FormValue("url")
-	http.Redirect(w, r, "/mi/"+url, http.StatusFound)
+	var ust string
+	u, err := url.Parse(r.FormValue("url"))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	if u.Scheme != "" {
+		u.Scheme = ""
+		ust = u.String()[2:]
+	} else {
+		ust = u.String()
+	}
+	http.Redirect(w, r, "/mi/"+ust, http.StatusFound)
 }
 
 func miHandler(w http.ResponseWriter, r *http.Request) {
