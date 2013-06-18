@@ -1,6 +1,6 @@
 # go-metainspector-site 
 
-## See the [go-metainspector](http://github.com/fern4lvarez/go-metainspector-site) package in action!
+## See the [go-metainspector](http://github.com/fern4lvarez/go-metainspector) package in action!
 
 * 1: Get the `go-metainspector-site` package
 
