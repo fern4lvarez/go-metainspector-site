@@ -14,8 +14,8 @@
 		},
 		{
 			"ImportPath": "github.com/fern4lvarez/go-metainspector/metainspector",
-			"Comment": "0.2.3-3-gb0df3bd",
-			"Rev": "b0df3bdd2020cfe5d823c7b83d8b149dab7b7ce6"
+			"Comment": "0.2.6",
+			"Rev": "22b88c331f1e6bce2bb6ea6e9d5c554394f391f4"
 		}
 	]
 }
