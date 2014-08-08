@@ -1,0 +1,21 @@
+{
+	"ImportPath": "github.com/fern4lvarez/go-metainspector-site",
+	"GoVersion": "go1.3",
+	"Deps": [
+		{
+			"ImportPath": "code.google.com/p/go-html-transform/h5",
+			"Comment": "go1-18",
+			"Rev": "a658ae052533fba7df942578496bcc888b21d838"
+		},
+		{
+			"ImportPath": "code.google.com/p/go.net/html",
+			"Comment": "null-47",
+			"Rev": "4e0dc83f5a857e4d4f9455d1073eff284fdee117"
+		},
+		{
+			"ImportPath": "github.com/fern4lvarez/go-metainspector/metainspector",
+			"Comment": "0.2.3-3-gb0df3bd",
+			"Rev": "b0df3bdd2020cfe5d823c7b83d8b149dab7b7ce6"
+		}
+	]
+}
